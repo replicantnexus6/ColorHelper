@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色彩ヘルパー サポート</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-muted: #666666;
+            --border-color: #e9ecef;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .meta-info p {
+            margin-bottom: 4px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 15px;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 5px;
+            top: 0;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        ol li::before {
+            counter-increment: item;
+            content: counter(item) ".";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 5px;
+            top: 0;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .faq-a {
+            color: #4a5568;
+            padding-left: 4px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>色彩ヘルパー サポート</h1>
+        <div class="meta-info">
+            <p>最終更新日：2026年07月10日</p>
+            <p>開発者：Replicant Software / 西岡大祐</p>
+            <p>バージョン：2.0</p>
+        </div>
+    </header>
+
+    <section>
+        <h2>お知らせ</h2>
+        <ul>
+            <li>本アプリはインターネット接続不要で動作します。</li>
+            <li>個人情報の収集は一切行っていません（アカウント登録、位置情報、連絡先、広告ID、分析データ等は取得しません）。</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>よくある質問（FAQ）</h2>
+        <div class="faq-item">
+            <p class="faq-q">Q. オフラインで使えますか？</p>
+            <p class="faq-a">A. はい。全機能はオフラインでご利用いただけます。外部サーバーとの通信は行いません。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q. 個人情報は保存されますか？</p>
+            <p class="faq-a">A. いいえ。個人情報は端末内・サーバー上ともに保存しません。アプリ設定などが端末内に保持されることはありますが、個人を特定できる情報は含みません。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q. 広告やトラッキングはありますか？</p>
+            <p class="faq-a">A. ありません。広告SDK・分析SDK・クラッシュレポート送信等は使用していません。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q. 権限（カメラ、マイク、位置情報等）は必要ですか？</p>
+            <p class="faq-a">A. 不要です。本アプリはそれらの権限を要求しません。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q. データのバックアップはできますか？</p>
+            <p class="faq-a">A. アプリ内に個人情報は保存していません。設定等のバックアップが必要な場合は、端末のシステムバックアップ機能（iCloud/ローカルバックアップ）をご利用ください。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q. 不具合が起きた場合は？</p>
+            <p class="faq-a">A. 端末の再起動、アプリの再インストールをお試しください。解決しない場合は、下記「お問い合わせ」から詳細（発生手順、端末モデル、OS/アプリのバージョン）をお知らせください。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>使い方ガイド（クイックスタート）</h2>
+        <ol>
+            <li>アプリを起動します。</li>
+            <li>メイン画面でカラーピッカーを操作し、目的の色を選びます。</li>
+            <li>色一覧からJISに定義された色を検索できます。</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>既知の問題・制限事項</h2>
+        <ul>
+            <li>もし不具合を見つけた場合は、お問い合わせからお知らせください。</li>
+            <li>端末の表示設定（True Tone、Night Shift 等）により、見た目の色味が異なる場合があります。</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>プライバシーについて</h2>
+        <p>本アプリは個人情報を一切収集しません。詳細はプライバシーポリシーをご確認ください。</p>
+        <ul>
+            <li>プライバシーポリシー: <a href="privacy.html">privacy.html</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>サポート対象</h2>
+        <ul>
+            <li>対応OS：iOS 18〜 / iPadOS 18〜</li>
+            <li>対応デバイス：iPhoneおよびiPad</li>
+            <li>最新の安定版アプリバージョン（2.0）をご利用ください。</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>お問い合わせ</h2>
+        <p>不具合報告・ご要望・ご質問は、以下の方法でご連絡ください。</p>
+        <ul>
+            <li>メール: <a href="mailto:replicantsoftware@gmail.com">replicantsoftware@gmail.com</a></li>
+        </ul>
+        
+        <p style="margin-top: 15px; font-weight: bold;">お問い合わせの際にあると助かる情報</p>
+        <ul>
+            <li>端末モデル（例：iPhone 15）</li>
+            <li>iOSバージョン（例：iOS 18.3）</li>
+            <li>アプリのバージョン（例：2.0）</li>
+            <li>発生手順、期待した動作、実際の動作、再現の可否（毎回/時々）</li>
+            <li>可能であればスクリーンショット（個人情報が写らない範囲で）</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2026 Replicant Software. All rights reserved.
+    </footer>
+</div>
+
+</body>
+</html>
